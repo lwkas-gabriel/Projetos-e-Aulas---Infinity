@@ -1,4 +1,5 @@
 import random
+import time
 
 """contador = 0
 
@@ -79,7 +80,7 @@ while condicaoParada >= contador:
 
 #numeroSecreto = 6
 
-numeroSecreto = random.randint(1,10)
+"""numeroSecreto = random.randint(1,10)
 guess = 0
 
 while True:
@@ -92,4 +93,51 @@ while True:
         continue
     else:
         print("parabéns, você acertou! O numero secreto era ", numeroSecreto)
-        break
+        break"""
+
+"""contador = 1
+
+soma = 0
+
+while contador <= 5:
+    soma += float(input("inserir numero: "))
+    contador += 1
+
+print(f"a soma dos seus numeros eh {soma}");
+print(f"a media dos seus numeros eh {soma/contador}");
+
+repeticao = "s"
+soma = 0
+contadorMedia = 0
+
+while repeticao == "s":
+    soma += float(input("Inserir para somar: "))
+    contadorMedia += 1
+    repeticao = str(input("Deseja continuar? (s/n)"))
+
+print(f"a soma dos seus numeros eh {soma}");
+print(f"a media dos seus numeros eh {soma/contadorMedia}");"""
+
+"""maiorNumero = 0;
+contador = 0
+numero = 0
+
+while contador <= 4:
+    numero = float(input("inserir numero: "))
+
+    if numero > maiorNumero:
+        maiorNumero = numero
+        contador += 1
+        continue
+    contador += 1
+
+print(f"o maior numero eh {maiorNumero}")
+
+contador = 10
+
+while contador >= 0:
+    time.sleep(1)
+    print(contador)
+    if contador == 0:
+        print("Feliz ano novo!")
+    contador -= 1"""
