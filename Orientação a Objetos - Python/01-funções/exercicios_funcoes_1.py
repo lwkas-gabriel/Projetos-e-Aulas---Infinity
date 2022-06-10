@@ -109,5 +109,3 @@ def calculandoSeculo(ano):
             continue
 
     return seculoRomano
-
-print(calculandoSeculo(3899))
