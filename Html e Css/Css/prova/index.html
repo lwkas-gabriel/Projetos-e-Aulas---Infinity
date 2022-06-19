@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Prova - Form simples</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="get">
+            <label for="">Nome:</label></br>
+            <input type="text" name="" id="nome" required></br>
+            <label for="">Telefone:</label></br>
+            <input type="number" name="" id="telefone" required></br>
+            <label for="">Email:</label></br>
+            <input type="email" name="" id="email" required></br>
+    
+            <fieldset>
+                <legend>Selecione a seguir</legend>
+            
+                <div>
+                  <input type="radio" id="front" name="opt" value="front">
+                  <label for="back">Frontend</label>
+                </div>
+            
+                <div>
+                  <input type="radio" id="back" name="opt" value="back">
+                  <label for="back">Backend</label>
+                </div>
+            
+                <div>
+                  <input type="radio" id="full" name="opt" value="full">
+                  <label for="full">Fullstack</label>
+                </div>
+            </fieldset>
+    
+            <fieldset>      
+                <legend>Tecnologia Favorita?</legend>      
+                <input type="checkbox" name="favorite_tech" id="java" value="java">Java<br>      
+                <input type="checkbox" name="favorite_tech" id="c#" value="c#">C#<br>      
+                <input type="checkbox" name="favorite_tech" id="html" value="html">HTML<br>
+                <input type="checkbox" name="favorite_tech" id="css" value="css">CSS<br>
+                <input type="checkbox" name="favorite_tech" id="js" value="js">Javascript<br>     
+            </fieldset>     
+    
+            <input type="button" name="" id="" value="Enviar" onclick="envia()">
+            <input type="button" name="" id="" value="Reset" onclick="reseta()">
+        </form>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
