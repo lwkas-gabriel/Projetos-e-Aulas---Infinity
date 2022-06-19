@@ -1,0 +1,17 @@
+body{
+    color: yellow;
+}
+
+.logo{
+    border: 1px hidden black;
+    border-radius: 30px;
+}
+
+.navbar{
+    background: #B22222;
+    color: yellow;
+}
+
+.navbar a:hover{
+    color: yellow;
+}
