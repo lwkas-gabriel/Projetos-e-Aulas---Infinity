@@ -1,0 +1,120 @@
+import re
+
+class Computador:
+    def __init__(self, modelo, fabricante, processador, ram, tamanhoHD, ocupadoHD):
+        self.__modelo = modelo;
+        self.__fabricante = fabricante;
+        self.__processador = processador;
+        self.__ram = ram;
+        self.__tamanhoHD = tamanhoHD;
+        self.__ocupadoHD = ocupadoHD;
+        self.__ligado = False;
+
+    def set_modelo(self, modelo):
+        self.__modelo = modelo;
+
+    def get_modelo(self):
+        return self.__modelo;
+
+    def set_fabricante(self, fabricante):
+        self.__fabricante = fabricante;
+
+    def get_modelo(self):
+        return self.__fabricante;
+
+    def set_processador(self, processador):
+        self.__processador = processador;
+
+    def get_processador(self):
+        return self.__processador;
+
+    def set_ram(self, ram):
+        self.__ram = ram;
+
+    def get_ram(self):
+        return self.__ram;
+
+    def set_tamanho(self, tamanho):
+        self.__tamanhoHD = tamanho;
+
+    def get_tamanho(self):
+        return self.__tamanhoHD;
+
+    def set_ocupado(self, ocupado):
+        self.__ocupadoHD = ocupado;
+
+    def get_ocupado(self):
+        return self.__ocupadoHD;
+
+    def liga(self):
+        if self.__ligado == False:
+            self.__ligado = True;
+            print("Computador dando boot!")
+        else:
+            print("Computador já está ligado")
+        #  -> altera o status de "Está ligado" para True
+    def desliga(self):
+        if self.__ligado == False:
+            print("Computador já está desligado!")
+        else:
+            self.__ligado = False;
+            print("Encerrando atividades do SO...")
+
+        #  -> altera o status de "Está ligado" para False
+    def limparHD(self, valor):
+        formato_numero = re.compile(r'^\-?[1-9][0-9]*$')
+        isNumero = re.match(formato_numero,valor)
+
+        if self.__ligado:
+            if isNumero:
+                if self.__ocupadoHD == 0:
+                    print("Você não tem nada para liberar...Espaço Ocupado = 0")
+                else:
+                    if int(valor) > 0:
+                        print("entrada inválida")
+                    else:
+                        if -(int(valor)) > self.__ocupadoHD:
+                            self.__ocupadoHD = 0;
+                        else:
+                            self.__ocupadoHD += int(valor)
+                            
+
+
+            else:
+                print("entrada inválida")
+        else:
+            print("computador está desligado...");
+        
+        #  -> recebe por parâmetro o tamanho do espaço que deseja liberar do HD
+    
+    def ocuparHD(self, valor):
+        formato_numero = re.compile(r'^\-?[1-9][0-9]*$')
+        isNumero = re.match(formato_numero,valor)
+
+        if self.__ligado:
+            if isNumero:
+                if self.__ocupadoHD == self.__tamanhoHD:
+                    print("HD cheio!")
+                elif int(valor) > self.__tamanhoHD:
+                    print("Arquivo muito grande! Espaço em disco insuficiente")
+                else:
+                    if int(valor) < 0:
+                        print("entrada inválida")
+                    else:
+                        self.__ocupadoHD += int(valor);
+            else:
+                print("entrada inválida")
+        else:
+            print("computador está desligado...");
+        #  -> recebe por parâmetro o tamanho do espaço que deseja ocupar do HD
+
+
+
+meuNote = Computador("Notebook", "LeNovo", "i7", "8gb", 5000, 0)
+meuNote.liga();
+meuNote.ocuparHD("4999");
+meuNote.ocuparHD("1");
+meuNote.limparHD("-500")
+meuNote.limparHD("-500")
+meuNote.limparHD("-4001")
+print(meuNote.get_ocupado())
